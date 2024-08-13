@@ -41,4 +41,8 @@ speech = gTTS(text = text, lang = language, slow = False)
 
 speech.save("/tmp/text.mp3")
 
-os.system("mpg123 /tmp/text.mp3")
+os.system("ffmpeg  -i /tmp/text.mp3 -y /tmp/text.wav")
+os.system("paplay /tmp/text.wav")
+
+#os.system("mpg123 /tmp/text.mp3")
+
